@@ -1,0 +1,4 @@
+﻿  Principal.cpp
+C:\Users\Joao-\source\repos\Algoritmo_genetico\Algoritmo_genetico\Principal.cpp(20,14): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Joao-\source\repos\Algoritmo_genetico\Algoritmo_genetico\Principal.cpp(27,16): warning C4244: 'initializing': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Algoritmo_genetico.vcxproj -> C:\Users\Joao-\source\repos\Algoritmo_genetico\Debug\Algoritmo_genetico.exe
