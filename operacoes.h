@@ -16,8 +16,6 @@ void mergeSort(t_individuo vet[], int tam_vet);
     
 float obter_fitness(float x1, float x2);
     
-void identificar_dominio(float *l_inf, float *l_sup);
-    
 void encontra_melhor_individuo(t_individuo vet[], int tam_vet, t_individuo *melhor);
 
 void imprimir_individuo(t_individuo individuo);

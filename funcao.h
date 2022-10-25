@@ -1,4 +1,4 @@
 #include <cmath>
 
 float funcao(float x1, float x2);
-void dominio_funcao(float d[]);
+void identificar_dominio(float *l_inf, float *l_sup);

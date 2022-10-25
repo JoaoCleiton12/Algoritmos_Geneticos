@@ -62,13 +62,6 @@ float obter_fitness(float x1, float x2) {
     return funcao(x1,x2);
 }
 
-void identificar_dominio(float *l_inf, float *l_sup){
-    float d[2];
-    dominio_funcao(d);
-    *l_inf = d[0];
-    *l_sup = d[1];
-}
-
 /*
  * O procedimento abaixo eh responsavel por encontrar o melhor individuo (o que possui o menor fitness) no vetor "vet".
  */
