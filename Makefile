@@ -1,5 +1,5 @@
 geneticomake:
-	g++ Principal.cpp funcao.cpp gerador_numeros.cpp ag.cpp -o saida.out -lm
+	g++ principal.cpp funcao.cpp gerador_numeros.cpp operacoes.cpp -o saida.out -lm
 
 clean:
 	rm saida.out
