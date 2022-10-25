@@ -5,7 +5,6 @@ void merge(t_individuo vet[], int tam_vet) {
     int mid;
     int i, j, k;
     t_individuo* tmp;
-    
     tmp = (t_individuo*) malloc(tam_vet * sizeof(t_individuo));
     
     if (tmp == NULL) {
@@ -47,7 +46,7 @@ void merge(t_individuo vet[], int tam_vet) {
 
 /*
  * Ordenacao da Populacao pelo Fitness
- * O procedimento abaixo implementa o algoritmo de Ordenacao MERGE SORT.
+ * O procedimento abaixo implementa o algoritmo de Ordenação MERGE SORT.
  */
 void mergeSort(t_individuo vet[], int tam_vet) {
     int mid;
@@ -109,8 +108,6 @@ void imprimir_populacao(t_individuo populacao[], int total_individuos){
  * Os parametros de entrada deste procedimento sao:
  *  - a populacao (vetor de "t_individuo")
  *  - o tamanho da populacao ("total_individuos")
- *  - o ID (ou codigo) da funcao a ser otimizada. Este ID eh necessario para se reconhecer a funcao
- *      facilitando a obtencao do dominio e do fitness de tal funcao.
  */
 void gerar_populacao_inicial(t_individuo populacao[], int total_individuos){
 
@@ -129,14 +126,10 @@ void gerar_populacao_inicial(t_individuo populacao[], int total_individuos){
 
 /*
  * Operador de Mutacao
- * Este procedimento implementa o operador de mutacao por RESET ALEATORIO, como especificado no enunciado do trabalho.
- *
- * Os parametros de entrada deste procedimento sao:
- *  - o filho (ou descendente) gerado pela recombinacao de dois pais selecionados
- *  - a probabilidade (baixa) de mutacao informada pelo usuario no Menu (prob_mutacao)
- *  - o ID (ou codigo) da funcao a ser otimizada. Este ID eh necessario para se reconhecer a funcao
- *      facilitando a obtencao do dominio e do fitness de tal funcao.
- * 
+ * Este procedimento implementa o operador de mutação por RESET ALEATORIO
+ * Os parametros de entrada deste procedimento são:
+ *  - o filho (ou descendente) gerado pela recombinação de dois pais selecionados
+ *  - a probabilidade (baixa) de mutacao 
  */
 void op_mutacao(t_individuo *filho, float prob_mutacao){
     float u = obter_numero_uniforme();
@@ -159,7 +152,7 @@ void op_mutacao(t_individuo *filho, float prob_mutacao){
  * O procedimento abaixo e responsavel por recombinar os codigos geneticos de ambos os pais
  * para criar um novo individuo descendente (filho).
  *
- * Foi implementado o operador de recombina��o Aritmetica Completa.
+ * Foi implementado o operador de recombinação Aritmética Completa.
  
  * Os parametros de entrada deste procedimento sao:
  *  - os pais selecionados no torneio ("pai" e "mae")
@@ -181,12 +174,10 @@ void op_recombinacao(t_individuo pai,t_individuo mae,t_individuo *filho){
  * Os parametros de entrada deste procedimento sao:
  *  - a populacao (vetor de "t_individuo")
  *  - o tamanho da populacao ("total_individuos")
- *  - o ID (ou codigo) da funcao a ser otimizada. Este ID eh necessario para se reconhecer a funcao
- *      facilitando a obtencao do dominio e do fitness de tal funcao.
- *  - os pais a serem selecionados no torneio ("pai" e "mae"). [SELECAO POR TORNEIO, onde a letra grega "tau" = 3]
+ *  - os pais a serem selecionados no torneio ("pai" e "mae"). [SELECAO POR TORNEIO]
  */
 void op_selecao_de_pais(t_individuo populacao[], int total_individuos, t_individuo *pai, t_individuo *mae){
-    t_individuo sorteio[3]; //valor eh 3 pois foi definido no enunciado, isto e, letra grega "tau" = 3
+    t_individuo sorteio[3];
     
     sorteio[0] = populacao[obter_numero_uniforme_discreto(0,total_individuos-1)];
     sorteio[1] = populacao[obter_numero_uniforme_discreto(0,total_individuos-1)];
@@ -208,8 +199,6 @@ void op_selecao_de_pais(t_individuo populacao[], int total_individuos, t_individ
  *  segundo a avaliacao do fitness.
  *
  * A quantidade de individuos a ser substituida esta representada pela variavel "descarte"
-     (no enunciado pela letra grega "lambda")
- *     
  * Os parametros de entrada deste procedimento sao:
  *  - a populacao (vetor de "t_individuo")
  *  - o tamanho da populacao ("total_individuos")
@@ -230,7 +219,7 @@ void op_selecao_de_sobreviventes(t_individuo populacao[], int total_individuos, 
  * Evolucao da Populacao
  * No procedimento "executar" que e realizada a Evolucao da Populacao.
  
- * Os parametros de entrada (definidos pelo usuario) deste procedimento sao:
+ * Os parametros de entrada deste procedimento sao:
  *  - o tamanho da populacao (ou total de individuos "total_individuos" da populacao)
  *  - a quantidade "descarte" de individuos a serem substituidos na proxima geracao
  *  - por quantas "geracoes" a populacao inicial sera evoluida
@@ -240,8 +229,7 @@ void executar(int total_individuos, int descarte, int geracoes, float prob_mutac
     srand((unsigned)time(NULL)); 
     
     /*
-     * A Populacao e representada como um vetor de "t_individuo", cujo o tamanho e "total_individuos" (definido previamente pelo usuario).
-     * A variavel "total_individuos" e equivalente a letra grega "mu" especificada no enunciado do trabalho.
+     * A Populacao e representada como um vetor de "t_individuo", cujo o tamanho e "total_individuos".
      */
     t_individuo populacao[total_individuos]; 
     
